@@ -26,7 +26,7 @@
         <a class="nav-link" href="Punto2.php">Punto2</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="Punto3.php">Punto3</a>
       </li>
     </ul>
   </div>

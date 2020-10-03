@@ -24,7 +24,7 @@
             <a class="nav-link" href="Punto2.php">Punto2</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="Punto3.php">Punto3</a>
           </li>
         </ul>
       </div>
@@ -46,54 +46,69 @@
             <h4 align="center">Calcula tu indice de masa corporal</h4>
                 <div class="row">
                     <div class="col">
-                <input type="text" class="form-control" placeholder="Peso" name="Peso">
+                <input type="text" class="form-control" placeholder="Digite su Peso en Kilogramos" name="Peso">
                     </div>
                     <div class="col">
                 <input type="text" class="form-control" placeholder="Altura" name="Altura">
                     </div>
                  </div>
                  <button type="submit" class="btn btn-primary mt-3" name="operacion" >CALCULAR IMC</button>
+                 
+
             </form>
+            <?php
 
-        <?php
+        if(isset($_POST["operacion"]))
+    {
+        $peso=$_POST["Peso"];
+        $altura=$_POST["Altura"];
+        function IMC($peso,$altura)
+        {
+            $IMC = $peso/($altura*$altura);
+            return IMC
+        }
+        $IMC = IMC($peso,$altura);
+        if ($IMC <= 18.5) {
+            $echo = "Peso Insuficiente";
+        }
+        else if($IMC > 18.5 AND $IMC <=24.9)
+        {
+           $echo ="Peso Normo Peso";
+        }
+        else if($IMC > 25 AND $IMC <26.9)
+        {
+            $echo="Peso sobre peso grado I ";
+        } 
+        else if($IMC > 27 AND $IMC <=27.9)
+        {
+            $echo="Tienes SobrePeso Grado II ";
+        }
+        else if($IMC > 30 AND $IMC <=34.9)
+        {
+            $echo="Tienes Obesidad de Tipo I";
+        }
+        else if($IMC > 35 AND $IMC <=39.9)
+        {
+            $echo="Tienes Obesidad Tipo II";
+        }
+        else if($IMC > 40 AND $IMC <=49.9)
+        {
+            $echo="Tienes Obesidad Tipo III (Morbida)";
+        }
+        else if($IMC >50.0)
+        {
+            $echo="Tienes Obesidad Tipo VI (Extrema)";
+        }
+        $echo "Tu indice de masa corporal es ".$IMC."y tu eres"
+        echo "$echo";
 
-         if (isset($_POST["operacion"])){
-          $Peso=$_POST["Peso"];
-          $Altura=$_POST["Altura"];
-
-          $operacion= $Peso / ($Altura * $Altura);
-
-          if($operacion < 18.5)
-          echo("Tienes Peso Insuficiente");
-          
-        
-          
-          
-
-          
-         }
+    }
 
 
 
+?>
 
-
-        ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>        
+              </div>        
         </div>       
     </div>
 
