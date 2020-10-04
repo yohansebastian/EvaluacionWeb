@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">EvaluacionWEB1</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +27,15 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Punto3.php">Punto3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Punto4.php">Punto4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Punto5.php">Punto5</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="Punto6.php">Punto6</a>
           </li>
         </ul>
       </div>

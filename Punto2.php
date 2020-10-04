@@ -9,7 +9,7 @@
   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">EvaluacionWEB1</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,19 +26,32 @@
           <li class="nav-item">
             <a class="nav-link" href="Punto3.php">Punto3</a>
           </li>
+          <li class="nav-item">
+        <a class="nav-link" href="Punto4.php">Punto4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Punto5.php">Punto5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Punto6.php">Punto6</a>
+      </li>
         </ul>
       </div>
     </nav>
   </header>
-  <h4 class="h4 text-center" >Punto Nº2 </h4>
+ 
+    <font color="Orange"> <h1 class="h1 text-center">BodyTech</h1></font>                       
 
-  
-    <div class="col">
-  <h5 class="h5 text-center">2.El gimnasio Bodytech, lo contrata para desarrollar una
-                             a  plicación web<br> que permita a sus usuarios calcular el índice
-                            de masa corporal.</h5>
-
-
+  <div class="row">
+<div class="col col-8 ">
+<h5 class="h5 text-center">El índice de masa corporal (IMC) es un número que se calcula con base en el peso
+   y la estatura de la persona. Para la mayoría de las personas, 
+   el IMC es un indicador confiable de la gordura y se usa para identificar las categorías 
+   de peso que pueden llevar a problemas de salud.</h5>
+   <div class="col col-6 text center">
+    <img src="img/imc.png" alt="IndiceMasaCorporal" class="img-thumbnail"><a href="#"></a>
+    </div>
+</div> 
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col 4">
@@ -62,45 +75,43 @@
     {
         $peso=$_POST["Peso"];
         $altura=$_POST["Altura"];
-        function IMC($peso,$altura)
+        $IMC = $peso/($altura*$altura);
+        
+        $IMCredondeado = round($IMC,2);
+        echo(" El IMC que tienes es : ".$IMCredondeado);
+        if ($IMC <= 18.5) 
         {
-            $IMC = $peso/($altura*$altura);
-            return IMC
+            echo (" Peso Insuficiente");
         }
-        $IMC = IMC($peso,$altura);
-        if ($IMC <= 18.5) {
-            $echo = "Peso Insuficiente";
-        }
-        else if($IMC > 18.5 AND $IMC <=24.9)
+        else if($IMC >= 18.5 && $IMC <25)
         {
-           $echo ="Peso Normo Peso";
+           echo (" Peso NormoPeso");
         }
-        else if($IMC > 25 AND $IMC <26.9)
+        else if($IMC >= 25 && $IMC <27)
         {
-            $echo="Peso sobre peso grado I ";
+            echo(" Peso sobre peso grado I ");
         } 
-        else if($IMC > 27 AND $IMC <=27.9)
+        else if($IMC >= 27 && $IMC <30)
         {
-            $echo="Tienes SobrePeso Grado II ";
+            echo(" Tienes SobrePeso Grado II ");
         }
-        else if($IMC > 30 AND $IMC <=34.9)
+        else if($IMC >= 30 && $IMC <35)
         {
-            $echo="Tienes Obesidad de Tipo I";
+            echo(" Tienes Obesidad de Tipo I");
         }
-        else if($IMC > 35 AND $IMC <=39.9)
+        else if($IMC >= 35 && $IMC <40)
         {
-            $echo="Tienes Obesidad Tipo II";
+            echo(" Tienes Obesidad Tipo II");
         }
-        else if($IMC > 40 AND $IMC <=49.9)
+        else if($IMC >= 40 && $IMC <50)
         {
-            $echo="Tienes Obesidad Tipo III (Morbida)";
+            echo(" Tienes Obesidad Tipo III (Morbida)");
         }
-        else if($IMC >50.0)
+        else if($IMC >=50.0)
         {
-            $echo="Tienes Obesidad Tipo VI (Extrema)";
+            echo(" Tienes Obesidad Tipo VI (Extrema)");
         }
-        $echo "Tu indice de masa corporal es ".$IMC."y tu eres"
-        echo "$echo";
+        
 
     }
 
