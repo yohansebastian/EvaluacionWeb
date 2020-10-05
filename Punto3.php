@@ -82,16 +82,10 @@
   {
     $unidades=$_POST["Deportivo"];
     $Valor=120000;    
-    if($unidades = 3)
+    if($unidades <= 3)
     {
       $descuento=($unidades*$Valor)*0.1;
       $total=($unidades*$Valor)-$descuento;
-    }
-    elseif($unidades < 3)
-    {
-      $descuento=($unidades*$Valor)*0;
-      $total=($unidades*$Valor);
-      
     }
     elseif($unidades > 3 && $unidades < 8)
     {
@@ -115,17 +109,12 @@
     $unidades=$_POST["Hombre"];
     $Valor=210000;
     
-    if($unidades = 3)
+    if($unidades <= 3)
     {
       $descuento=($unidades*$Valor)*0.1;
       $total=($unidades*$Valor)-$descuento;
     }
-    elseif($unidades < 3)
-    {
-      $descuento=($unidades*$Valor)*0;
-      $total=($unidades*$Valor);
-      
-    }
+
     elseif($unidades > 3 && $unidades < 8)
     {
       $descuento=($unidades*$Valor)*0.2;
@@ -147,7 +136,7 @@
     $unidades=$_POST["Dama"];
     $Valor=160000;
     
-    if($unidades = 3)
+    if($unidades <= 3)
     {
       $descuento=($unidades*$Valor)*0.1;
       $total=($unidades*$Valor)-$descuento;

@@ -42,11 +42,12 @@
         </nav>
     </header>
     <h1 class="h1 text-center">Postobon Sueldo-Semanal<h1>
-
+        <div class="container fluid" align="center"> 
             <form class="mt-3" action="Punto4.php" method="POST">
                 <div class="row text-center">
                     <div class="col col-6 center">
                         <img src="img/posto.jpeg" alt="LogoPostobon" class="img-thumbnail"><a href="#"></a>
+                        <label for="nombre">Nùmero de horas Trabajadas</label>
                         <input type="text" class="form-control" name="Horas" placeholder=" Numero de Horas Trabajadas ">
                     </div>
 
@@ -58,6 +59,7 @@
                     </div>
                 </div>
             </form>
+            </div>    
 
  <?php
 

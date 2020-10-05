@@ -39,5 +39,51 @@
   </div>
 </nav>
   </header>
+<div class="container fluid">
+
+<h1 class="h1 text-center text-info">NUMEROS PARES<h1>
+
+<form class="mt-3" action="Punto6.php" method="POST">
+<h2 class="font-weight-bold text-primary text-center">Escriba cuantos numeros pares desea calcular.</h2>
+        <br>
+        <div class="row text-center">
+            <div class="col col-12 center">
+              <label for="cantidad"><i class="far fa-user"></i>Cantidad de numeros</label>
+              <input type="number" class="form-control" name="cantidad" placeholder="Cantidad de Numeros a Calcular">
+            </div>
+        </div>
+        <div class="row p-2">
+                <div class="col col-12 text-center">
+                    <button name="calcular" class="btn btn-danger ">Calcular</button>
+                </div>
+            </div>
+</form>
+<?php
+  if(isset($_POST["calcular"]))
+{
+  $cantidad=$_POST["cantidad"];
+  
+  $arreglo=array($cantidad);
+
+  for($centinela=0;$centinela<$cantidad;$centinela=$centinela+2){
+    
+    echo($centinela);
+    echo("<br>");
+  }
+}
+  
+
+
+?>
+
+
+
+
+
+
+
+</div>
+
+
 </body>
 </html>
