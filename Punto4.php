@@ -66,18 +66,23 @@
     if(isset($_POST["SalarioBasico"]))
     {
         $Hora=$_POST["Horas"];
+        $ValH=20000;
+        $sueldo=800000;
+        $HoraExt=($Hora - 40);
+        $ValHex=25000;
         
         if($Hora <= 40 )
         {
-            $horas=$Hora*20000;
+            $sueldo1=$Hora*20000;
+            echo( " El Sueldo Semanal que tendras es de $ ".$sueldo1);
         }
         elseif($Hora > 40)
         {
-            $HoraExt=($Hora - 40)*25000;
-            $horas=($Hora*20000) + $HoraExt;
+            $sueldo2=($HoraExt * $ValHex)+$sueldo;
+            echo( " El Sueldo Semanal que tendras es de $ ".$sueldo2);
 
         }
-        echo( " El Sueldo Semanal que tendras es de $ ".$horas);
+        
 
     }
 
